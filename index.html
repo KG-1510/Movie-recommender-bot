@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>MovieBot - Movie Recommender ChatBot</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://svgshare.com/i/KJd.svg" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}" />
+  <meta property="og:title" content="Moviebot">
+  <meta property="og:description"
+    content="An NLP powered movie recommendation chatbot, written in Python, HTML/CSS and JavaScript.">
+  <meta property="og:image" content="{{ url_for('static',filename='assets/thumbnail.png') }}">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@FNTey" />
+  <meta name="twitter:creator" content="@FNTey">
+  <meta name="twitter:title" content="Moviebot">
+  <meta name="twitter:description"
+    content="An NLP powered movie recommendation chatbot, written in Python, HTML/CSS and JavaScript.">
+  <meta name="twitter:image" content="https://nlp-moviebot.vercel.app/static/assets/thumbnail.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="title-header">
+    <h1>
+      <img src="https://svgshare.com/i/KJd.svg" alt="Moviebot" style="width:40px;height:40px; align:center;" /> MovieBot
+    </h1>
+    <p>A personalized Movie Recommender Chatbot using Cosine Similarity</p>
+  </div>
+  <div class="box"></div>
+  <div class="boxed">
+    <div>
+      <div id="chatbox">
+        <div class="welcome-bubble">
+          <img class="bot-image" src="https://svgshare.com/i/KJd.svg" alt="Moviebot" />
+
+          <div class="speech-bubble-bot botText">
+            <div>
+              Hi! I'm MovieBot! What movie genre(s) are you interested in?
+              <br>
+              <i style="font-size: 16px; color: rgb(17, 39, 100)">(if multiple, please separate them with a comma)</i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="userInput">
+        <input id="textInput" type="text" name="msg" placeholder='Type "skip" to skip this question'
+          autocomplete="off" />
+        <button id="userInputBtn" onclick="handleSendBtn()">
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="{{url_for('static', filename='javascript/script.js')}}"></script>
+
+</html>

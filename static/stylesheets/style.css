@@ -1,0 +1,277 @@
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 3em;
+  margin: 0;
+  padding: 14px;
+}
+
+h3 {
+  color: black;
+  font-size: 20px;
+  margin-top: 3px;
+  text-align: center;
+}
+
+#chatbox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-top: 60px;
+  overflow-y: auto;
+}
+
+#userInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+}
+
+#userInputBtn {
+  width: 10rem;
+  background-color: #0078ff;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+#textInput {
+  width: 90%;
+  border: 1px solid #646161;
+  font-family: "Rubik", sans-serif;
+  padding: 1rem;
+  font-size: 17px;
+  outline: none;
+  border-radius: 8px 0 0 8px;
+}
+
+.userText {
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-size: 17px;
+  text-align: right;
+  line-height: 30px;
+  background-color: #0078ff;
+  padding: 15px 20px;
+  border-radius: 10%;
+}
+
+.welcome-bubble {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  float: left;
+}
+
+.title-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.botText {
+  color: 050505;
+  font-family: "Rubik", sans-serif;
+  font-size: 17px;
+  text-align: left;
+  line-height: 30px;
+  background-color: #e4e6eb;
+  padding: 15px 20px;
+  border-radius: 10%;
+}
+
+.startOverText {
+  color: #0078ff;
+  font-family: "Rubik", sans-serif;
+  font-size: 17px;
+  text-align: right;
+  line-height: 30px;
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 10%;
+}
+
+.speech-bubble-user {
+  position: relative;
+  background: #0078ff;
+  border-radius: 15px;
+  margin: 10px auto;
+  clear: both;
+  float: right;
+  max-width: 100%;
+}
+
+.speech-bubble-bot {
+  position: relative;
+  background: #e4e6eb;
+  border-radius: 15px;
+  margin: 1rem;
+  clear: both;
+  float: left;
+  max-width: 100%;
+}
+
+.speech-bubble-start-over {
+  position: relative;
+  border: solid 2px #0078ff;
+  background: #fff;
+  border-radius: 15px;
+  margin: 10px auto;
+  clear: both;
+  float: right;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.bot-image {
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  border: 2px solid #646161;
+}
+
+.speech-bubble-start-over:hover {
+  background: #0078ff;
+  color: #fff;
+}
+
+.speech-bubble-start-over:hover .startOverText {
+  background: #0078ff;
+  color: #fff;
+}
+
+#tidbit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+}
+
+.boxed {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem;
+  width: 78%;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border: 1px solid #e4e6eb;
+  border-radius: 8px;
+}
+
+.box {
+  border: 2px solid black;
+}
+
+@keyframes bubble-load {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.loading-bubble {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 10px 2px 0px 2px;
+  transform: scale(0);
+  opacity: 0;
+  background: #646161;
+  animation: bubble-load 1s infinite backwards;
+  border-radius: 50%;
+}
+
+.loading-bubble:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.loading-bubble:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+.movie-scrollbar {
+  width: 100%;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.movie-box {
+  display: inline-block;
+  position: relative;
+  margin: 5px;
+  height: 200px;
+  width: 150px;
+  border: 1px solid #dadce0;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.movie-box:hover {
+  height: 200px;
+  width: 250px;
+}
+
+.movie-box img {
+  position: absolute;
+  width: 100%;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  transition: all 0.3s ease 0s;
+}
+
+.movie-box:hover img {
+  filter: brightness(0.35);
+}
+
+.movie-title {
+  display: none;
+  position: absolute;
+  bottom: 35px;
+  left: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.movie-details {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 16px;
+  color: #fff;
+}
+
+.movie-box:hover .movie-title {
+  display: block;
+}
+
+.movie-box:hover .movie-details {
+  display: block;
+}
